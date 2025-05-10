@@ -7,6 +7,7 @@ export default function DrawerLayout() {
     <Drawer
       drawerContent={CustomDrawer}
       screenOptions={{
+        // headerShown: false,
         overlayColor: "rgba(0, 0, 0, 0.5)",
         drawerActiveTintColor: "indigo",
         headerShadowVisible: false,
@@ -41,6 +42,21 @@ export default function DrawerLayout() {
           drawerIcon: ({ color, size }) => (
             <Ionicons
               name="calendar-outline"
+              size={size}
+              color={color}
+            />
+          )
+        }}
+      />
+      <Drawer.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+          drawerLabel: "Tabs",
+          title: "Tabs",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons
+              name="grid-outline"
               size={size}
               color={color}
             />

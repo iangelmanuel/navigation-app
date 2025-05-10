@@ -1,7 +1,20 @@
-import { Stack } from "expo-router"
+import { Ionicons } from "@expo/vector-icons"
+import { DrawerActions, StackActions } from "@react-navigation/native"
+import { Stack, useNavigation } from "expo-router"
 import React from "react"
 
 export default function StackLayout() {
+  const navigation = useNavigation()
+
+  const onHeaderLeftPress = (canGoBack: boolean | undefined) => {
+    if (canGoBack) {
+      navigation.dispatch(StackActions.pop())
+      return
+    }
+
+    navigation.dispatch(DrawerActions.toggleDrawer)
+  }
+
   return (
     <Stack
       screenOptions={{
@@ -9,7 +22,15 @@ export default function StackLayout() {
         headerShadowVisible: false,
         contentStyle: {
           backgroundColor: "white"
-        }
+        },
+        headerLeft: ({ tintColor, canGoBack }) => (
+          <Ionicons
+            name={canGoBack ? "arrow-back-outline" : "grid-outline"}
+            size={20}
+            className="mr-5"
+            onPress={() => onHeaderLeftPress(canGoBack)}
+          />
+        )
       }}
     >
       <Stack.Screen
