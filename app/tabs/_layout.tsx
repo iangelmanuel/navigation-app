@@ -5,10 +5,29 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "purple",
-        tabBarShowLabel: false
+        tabBarActiveTintColor: "indigo",
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "white",
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowColor: "transparent"
+        }
       }}
     >
+      <Tabs.Screen
+        name="(stack)"
+        options={{
+          title: "Stack",
+          tabBarIcon: ({ color }) => (
+            <Ionicons
+              size={28}
+              name="person-outline"
+              color={color}
+            />
+          )
+        }}
+      />
       <Tabs.Screen
         name="home/index"
         options={{

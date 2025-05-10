@@ -10,31 +10,31 @@ export default function HomeScreen() {
       <View className="px-10 mt-5">
         <CustomButton
           color="primary"
-          onPress={() => router.push("/products")}
+          onPress={() => router.push("/tabs/products")}
           className="mb-2"
         >
           Productos
         </CustomButton>
 
         <CustomButton
-          color="tertiary"
-          onPress={() => router.push("/settings")}
-          className="mb-2"
-        >
-          Ajustes
-        </CustomButton>
-
-        <CustomButton
           color="secondary"
-          onPress={() => router.push("/profile")}
+          onPress={() => router.push("/tabs/profile")}
           className="mb-2"
         >
           Perfil
         </CustomButton>
 
+        <CustomButton
+          color="tertiary"
+          onPress={() => router.push("/tabs/settings")}
+          className="mb-2"
+        >
+          Ajustes
+        </CustomButton>
+
         <Link
           asChild
-          href="/products"
+          href="/tabs/products"
         >
           <CustomButton
             variant="text-only"
