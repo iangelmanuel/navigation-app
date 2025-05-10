@@ -11,7 +11,7 @@ export default function ProductScreen() {
 
   useEffect(() => {
     navigation.setOptions({
-      title: product?.title
+      title: product?.title ?? "Product"
     })
   }, [product])
 
